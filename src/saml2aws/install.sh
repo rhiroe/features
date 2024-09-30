@@ -10,12 +10,21 @@ set -a
 . ./devcontainer-features.env
 set +a
 
+architecture="$(uname -m)"
+case ${architecture} in
+    x86_64) architecture="amd64";;
+    aarch64 | armv8*) architecture="arm64";;
+    aarch32 | armv7* | armvhf*) architecture="arm";;
+    i?86) architecture="386";;
+    *) echo "(!) Architecture ${architecture} unsupported"; exit 1 ;;
+esac
+
 if [ "${SAML2AWSVERSION}" = "latest" ]; then
     SAML2AWS_VERSION="2.36.17"
 else
     SAML2AWS_VERSION="${SAML2AWSVERSION:-"2.36.17"}"
 fi
-SAML2AWS_DOWNLOAD_URL=https://github.com/Versent/saml2aws/releases/download/v${SAML2AWS_VERSION}/saml2aws_${SAML2AWS_VERSION}_linux_amd64.tar.gz
+SAML2AWS_DOWNLOAD_URL=https://github.com/Versent/saml2aws/releases/download/v${SAML2AWS_VERSION}/saml2aws_${SAML2AWS_VERSION}_linux_${architecture}.tar.gz
 
 apt update && \
 apt install -y ca-certificates wget && \
