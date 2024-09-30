@@ -1,0 +1,37 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
+  "customizations": {
+      "vscode": {
+          "settings": {
+              "json.schemas": [
+                  {
+                      "fileMatch": [
+                          "*/devcontainer-feature.json"
+                      ],
+                      "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
+                  }
+              ]
+          },
+          "extensions": [
+              "mads-hartmann.bash-ide-vscode"
+          ]
+      }
+  },
+  "features": {
+      "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "remoteUser": "node",
+  "updateContentCommand": "npm install -g @devcontainers/cli",
+  "mounts": [
+        {
+            "type": "bind",
+            "source":"${localEnv:HOME}/.aws",
+            "target":"/home/node/.aws"
+        },
+        {
+            "type": "bind",
+            "source":"${localEnv:HOME}/.saml2aws",
+            "target":"/home/node/.saml2aws"
+        }
+    ]
+}
