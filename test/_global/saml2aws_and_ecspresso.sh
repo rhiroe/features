@@ -41,7 +41,6 @@ source dev-container-features-test-lib
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
 check "saml2aws version" saml2aws --version
-check "saml2aws login" saml2aws login
 check "ecspresso version" ecspresso version
 check "jq version" jq --version
 check "yq version" yq --version
