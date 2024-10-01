@@ -2,7 +2,7 @@
     "id": "ecspresso",
     "version": "0.0.1",
     "name": "ecspresso",
-    "documentationURL": "https://github.com/rhiroe/aws-tools/src/ecspresso",
+    "documentationURL": "https://github.com/rhiroe/features/src/ecspresso",
     "description": "Provides ecspresso.",
     "keywords": ["ecspresso"],
     "options": {
