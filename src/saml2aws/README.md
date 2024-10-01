@@ -7,7 +7,7 @@ Provides saml2aws.
 
 ```json
 "features": {
-    "ghcr.io/rhiroe/aws-tools/saml2aws:0": {}
+    "ghcr.io/rhiroe/features/saml2aws:0": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Provides saml2aws.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/rhiroe/aws-tools/blob/main/src/saml2aws/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/rhiroe/features/blob/main/src/saml2aws/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
