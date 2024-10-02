@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: create dummy mount file
-        run: mkdir -p ~/.aws/config && touch ~/.aws/credentials && touch ~/.saml2aws
+        run: mkdir ~/.aws && touch ~/.aws/config && touch ~/.saml2aws
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: create dummy mount file
-        run: mkdir -p ~/.aws/config && touch ~/.aws/credentials && touch ~/.saml2aws
+        run: mkdir ~/.aws && touch ~/.aws/config && touch ~/.saml2aws
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
@@ -59,7 +59,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: create dummy mount file
-        run: mkdir -p ~/.aws/config && touch ~/.aws/credentials && touch ~/.saml2aws
+        run: mkdir ~/.aws && touch ~/.aws/config && touch ~/.saml2aws
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli

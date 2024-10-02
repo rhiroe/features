@@ -16,13 +16,6 @@
             "description": "Version of ecspresso to install."
         }
     },
-    "mounts": [
-        {
-            "source": "${localEnv:HOME}/.aws/credentials",
-            "target": "/root/.aws/credentials",
-            "type": "bind"
-        }
-    ],
     "installsAfter": [
         "ghcr.io/devcontainers/features/aws-cli"
     ]
