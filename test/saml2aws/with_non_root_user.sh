@@ -40,12 +40,11 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
+check "user" id -un | grep vscode
 check "saml2aws version" saml2aws --version
-check "ecspresso version" ecspresso version
-check "jq version" jq --version
-check "yq version" yq --version
-check "session-manager-plugin" session-manager-plugin
-check "can read aws credentials" cat $HOME/.aws/credentials
+check "can read aws config" cat $HOME/.aws/config
+check "can read saml2aws" cat $HOME/.saml2aws
+check "can write aws credentials" bash -c "echo test > $HOME/.aws/credentials && cat $HOME/.aws/credentials"
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.
