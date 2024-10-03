@@ -62,11 +62,14 @@ if [ "$USERNAME" != "root" ]; then
     touch /home/${USERNAME}/.aws/credentials
     chown -h "${USERNAME}":root /home/${USERNAME}/.aws/credentials
     chmod +w /home/${USERNAME}/.aws/credentials
+    mkdir /home/${USERNAME}/.aws/cli
+    chown -R "${USERNAME}":root /home/${USERNAME}/.aws/cli
 else
     mkdir /root/.aws
     ln -s /usr/local/share/.aws/config /root/.aws/config
     ln -s /usr/local/share/.saml2aws /root/.saml2aws
     touch /root/.aws/credentials
+    mkdir /root/.aws/cli
 fi
 EOF
 
