@@ -40,6 +40,7 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
+check "user" id -un | grep root
 check "saml2aws version" saml2aws --version
 check "can read aws config" cat $HOME/.aws/config
 check "can read saml2aws" cat $HOME/.saml2aws
