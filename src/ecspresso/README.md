@@ -16,6 +16,9 @@ Provides ecspresso.
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | ecspressoVersion | Version of ecspresso to install. | string | latest |
+| useSessionManagerPlugin | Install session manager plugin. | boolean | false |
+| jqVersion | Version of jq to install. | string | none |
+| yqVersion | Version of yq to install. | string | none |
 
 
 
