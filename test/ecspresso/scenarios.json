@@ -1,0 +1,50 @@
+{
+    "specify_version_by_2_4_0": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ecspresso": {
+                "ecspressoVersion": "2.4.0"
+            }
+        }
+    },
+    "use_session_manager_plugin": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ecspresso": {
+                "useSessionManagerPlugin": true
+            }
+        }
+    },
+    "use_jq_latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ecspresso": {
+                "jqVersion": "latest"
+            }
+        }
+    },
+    "use_jq_1_7_1": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ecspresso": {
+                "jqVersion": "1.7.1"
+            }
+        }
+    },
+    "use_yq_latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ecspresso": {
+                "yqVersion": "latest"
+            }
+        }
+    },
+    "use_yq_4_44_1": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ecspresso": {
+                "yqVersion": "4.44.1"
+            }
+        }
+    }
+}
