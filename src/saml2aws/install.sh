@@ -20,17 +20,18 @@ case ${architecture} in
     *) echo "(!) Architecture ${architecture} unsupported"; exit 1 ;;
 esac
 
-if [ "${SAML2AWSVERSION}" = "latest" ]; then
-    SAML2AWS_VERSION="2.36.17"
-else
-    SAML2AWS_VERSION="${SAML2AWSVERSION:-"2.36.17"}"
-fi
-SAML2AWS_DOWNLOAD_URL=https://github.com/Versent/saml2aws/releases/download/v${SAML2AWS_VERSION}/saml2aws_${SAML2AWS_VERSION}_linux_${architecture}.tar.gz
+SAML2AWS_VERSION="${SAML2AWSVERSION:-"2.36.17"}"
 
 apt update && \
 apt install -y ca-certificates wget && \
 rm -rf /var/lib/apt/lists/*
 
+if [ "${SAML2AWS_VERSION}" = "latest" ]; then
+    apt install -y curl && rm -rf /var/lib/apt/lists/*
+    SAML2AWS_DOWNLOAD_URL=$(curl -s https://api.github.com/repos/Versent/saml2aws/releases/latest | grep "browser_download_url.*saml2aws_[0-9.]+_linux_${architecture}.tar.gz" | cut -d ":" -f 2-3 | xargs echo)
+else
+    SAML2AWS_DOWNLOAD_URL=https://github.com/Versent/saml2aws/releases/download/v${SAML2AWS_VERSION}/saml2aws_${SAML2AWS_VERSION}_linux_${architecture}.tar.gz
+fi
 wget -O saml2aws.tar.gz "$SAML2AWS_DOWNLOAD_URL"
 tar zxvf saml2aws.tar.gz
 mv saml2aws /usr/bin/saml2aws

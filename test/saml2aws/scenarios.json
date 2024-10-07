@@ -1,4 +1,12 @@
 {
+    "specify_version_by_2_36_16": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "saml2aws": {
+                "saml2awsVersion": "2.36.16"
+            }
+        }
+    },
     "with_root_user": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "remoteUser": "root",
