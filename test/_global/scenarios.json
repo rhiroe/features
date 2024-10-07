@@ -2,12 +2,8 @@
   "saml2aws_and_ecspresso": {
       "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
       "features": {
-          "saml2aws": {
-              "saml2awsVersion": "2.36.15"
-          },
-          "ecspresso": {
-              "ecspressoVersion": "2.4.0"
-          }
+          "saml2aws": {},
+          "ecspresso": {}
       }
   }
 }

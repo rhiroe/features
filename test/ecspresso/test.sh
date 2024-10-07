@@ -41,9 +41,6 @@ source dev-container-features-test-lib
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
 check "ecspresso version" ecspresso version
-check "jq version" jq --version
-check "yq version" yq --version
-check "session-manager-plugin" session-manager-plugin
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.

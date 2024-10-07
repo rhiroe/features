@@ -40,9 +40,8 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
-check "saml2aws version" saml2aws --version
 check "ecspresso version" ecspresso version
-check "can read aws credentials" cat $HOME/.aws/credentials
+check "yq version" yq --version | grep "4.44.1"
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.

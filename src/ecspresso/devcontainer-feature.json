@@ -14,6 +14,31 @@
                 "2.4.1"
             ],
             "description": "Version of ecspresso to install."
+        },
+        "useSessionManagerPlugin": {
+            "type": "boolean",
+            "default": false,
+            "description": "Install session manager plugin."
+        },
+        "jqVersion": {
+            "type": "string",
+            "default": "none",
+            "proposals": [
+                "none",
+                "latest",
+                "1.7.1"
+            ],
+            "description": "Version of jq to install."
+        },
+        "yqVersion": {
+            "type": "string",
+            "default": "none",
+            "proposals": [
+                "none",
+                "latest",
+                "4.44.3"
+            ],
+            "description": "Version of yq to install."
         }
     },
     "installsAfter": [
