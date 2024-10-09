@@ -7,7 +7,7 @@ Provides ecspresso.
 
 ```json
 "features": {
-    "ghcr.io/rhiroe/features/ecspresso:0": {}
+    "ghcr.io/rhiroe/features/ecspresso:1": {}
 }
 ```
 
