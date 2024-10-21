@@ -21,9 +21,9 @@ case ${architecture} in
 esac
 
 if [ "${SAML2AWSVERSION}" = "latest" ]; then
-    SAML2AWS_VERSION="2.36.17"
+    SAML2AWS_VERSION="2.36.18"
 else
-    SAML2AWS_VERSION="${SAML2AWSVERSION:-"2.36.17"}"
+    SAML2AWS_VERSION="${SAML2AWSVERSION:-"2.36.18"}"
 fi
 SAML2AWS_DOWNLOAD_URL=https://github.com/Versent/saml2aws/releases/download/v${SAML2AWS_VERSION}/saml2aws_${SAML2AWS_VERSION}_linux_${architecture}.tar.gz
 
