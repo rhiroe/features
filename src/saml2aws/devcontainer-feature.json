@@ -1,6 +1,6 @@
 {
     "id": "saml2aws",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "saml2aws",
     "documentationURL": "https://github.com/rhiroe/features/src/saml2aws",
     "description": "Provides saml2aws.",
