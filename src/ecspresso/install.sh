@@ -10,6 +10,8 @@ set -a
 . ./devcontainer-features.env
 set +a
 
+LATEST_ECSPRESSO_VERSION="2.4.3"
+
 architecture="$(uname -m)"
 case ${architecture} in
     x86_64) architecture="amd64";;
@@ -20,9 +22,9 @@ case ${architecture} in
 esac
 
 if [ "${ECSPRESSOVERSION}" = "latest" ]; then
-    ECSPRESSO_VERSION="2.4.2"
+    ECSPRESSO_VERSION=$LATEST_ECSPRESSO_VERSION
 else
-    ECSPRESSO_VERSION="${ECSPRESSOVERSION:-"2.4.2"}"
+    ECSPRESSO_VERSION="${ECSPRESSOVERSION:-$LATEST_ECSPRESSO_VERSION}"
 fi
 ECSPRESSO_DOWNLOAD_URL=https://github.com/kayac/ecspresso/releases/download/v${ECSPRESSO_VERSION}/ecspresso_${ECSPRESSO_VERSION}_linux_${architecture}.tar.gz
 
