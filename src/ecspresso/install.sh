@@ -10,8 +10,6 @@ set -a
 . ./devcontainer-features.env
 set +a
 
-LATEST_ECSPRESSO_VERSION="2.4.3"
-
 architecture="$(uname -m)"
 case ${architecture} in
     x86_64) architecture="amd64";;
@@ -21,20 +19,23 @@ case ${architecture} in
     *) echo "(!) Architecture ${architecture} unsupported"; exit 1 ;;
 esac
 
+apt update && \
+apt install -y ca-certificates curl wget && \
+rm -rf /var/lib/apt/lists/*
+
+REPO=https://github.com/kayac/ecspresso
+LATEST_ECSPRESSO_VERSION=$(basename $(curl -Ls -o /dev/null -w %{url_effective} ${REPO}/releases/latest) | sed -e 's/v//g')
+
 if [ "${ECSPRESSOVERSION}" = "latest" ]; then
     ECSPRESSO_VERSION=$LATEST_ECSPRESSO_VERSION
 else
     ECSPRESSO_VERSION="${ECSPRESSOVERSION:-$LATEST_ECSPRESSO_VERSION}"
 fi
-ECSPRESSO_DOWNLOAD_URL=https://github.com/kayac/ecspresso/releases/download/v${ECSPRESSO_VERSION}/ecspresso_${ECSPRESSO_VERSION}_linux_${architecture}.tar.gz
+ECSPRESSO_DOWNLOAD_URL=${REPO}/releases/download/v${ECSPRESSO_VERSION}/ecspresso_${ECSPRESSO_VERSION}_linux_${architecture}.tar.gz
 
 USE_SESSION_MANAGER_PLUGIN="${USESESSIONMANAGERPLUGIN:-"false"}"
 JQ_VERSION="${JQVERSION:-"none"}"
 YQ_VERSION="${YQVERSION:-"none"}"
-
-apt update && \
-apt install -y ca-certificates wget && \
-rm -rf /var/lib/apt/lists/*
 
 wget -O ecspresso.tar.gz "$ECSPRESSO_DOWNLOAD_URL"
 tar zxvf ecspresso.tar.gz
