@@ -7,7 +7,7 @@ Provides saml2aws.
 
 ```json
 "features": {
-    "ghcr.io/rhiroe/features/saml2aws:1": {}
+    "ghcr.io/rhiroe/features/saml2aws:0": {}
 }
 ```
 
